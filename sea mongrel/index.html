@@ -50,9 +50,9 @@
   <script>
     var loaderUrl =  "Build/WebGL.loader.js";
     var config = {
-      dataUrl: "Build/WebGL.data.gz",
-      frameworkUrl: "Build/WebGL.framework.js.gz",
-      codeUrl: "Build/WebGL.wasm.gz",
+      dataUrl: "Build/WebGL.data",
+      frameworkUrl: "Build/WebGL.framework.js",
+      codeUrl: "Build/WebGL.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "kulu",
       productName: "Seamongrel",
@@ -130,8 +130,8 @@
             return await single.arrayBuffer();
           }
 
-          const dataBuf = await fetchMaybeSplit( 'Build/WebGL.data.gz');
-          const wasmBuf = await fetchMaybeSplit( 'Build/WebGL.wasm.gz');
+          const dataBuf = await fetchMaybeSplit( 'Build/WebGL.data');
+          const wasmBuf = await fetchMaybeSplit( 'Build/WebGL.wasm');
           const combinedBlob = new Blob([dataBuf, wasmBuf], { type: 'application/octet-stream' });
           const dataSlice = combinedBlob.slice(0, dataBuf.byteLength, 'application/octet-stream');
           const wasmSlice = combinedBlob.slice(dataBuf.byteLength, dataBuf.byteLength + wasmBuf.byteLength, 'application/wasm');
